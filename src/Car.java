@@ -7,15 +7,17 @@ public class Car {
     private int horsePower;
     private double engineSize;
     private String make;
+    private static int count;
 
     /**Constructor without parameters
      *
      */
     public Car() {
-        this.color = "Blue";
-        this.horsePower = 650;
-        this.engineSize = 6.5;
-        this.make = "Ferrari";
+        this.color = "";
+        this.horsePower = 0;
+        this.engineSize = 0;
+        this.make = "";
+        this.count++;
     }
 
     /**Constructor with parameters
@@ -30,6 +32,7 @@ public class Car {
         this.horsePower = horsePower;
         this.engineSize = engineSize;
         this.make = make;
+        this.count++;
     }
 
     /**Get the color of the Car
@@ -96,8 +99,19 @@ public class Car {
         this.make = make;
     }
 
+    /**Get the count of cars
+     *
+     * @return
+     */
+    public static int getCount() {
+        return count;
+    }
+    public boolean equals(Car otherObject) {
+        return (this.color == otherObject.color) && (this.horsePower == otherObject.horsePower) && (this.engineSize == otherObject.engineSize)&& (this.make == otherObject.make);
+    }
+
     /**Returns the variable in a String
-     * 
+     *
      * @return
      */
     public String toString() {
